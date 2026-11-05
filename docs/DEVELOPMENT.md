@@ -1,27 +1,46 @@
-# Developer guide
+# Development and maintenance
 
-## Requirements
+This is a dependency-free static site intended to be edited directly on GitHub if desired. The repository does not require a framework, bundler, database or backend.
 
-- A modern browser
-- Python 3 (optional, for local HTTP server)
-- Node.js (optional, for JavaScript syntax checks)
+## Source files
 
-## Architecture
+- `index.html`: semantic structure, sections and input controls
+- `assets/style.css`: original CodeLab styling plus new responsive sections
+- `assets/data.js`: `LESSONS` and `QUESTIONS` arrays
+- `assets/challenges.js`: `CHALLENGES` with two language variants per task
+- `assets/projects.js`: `PROJECTS` project briefs
+- `assets/app.js`: rendering, navigation, quizzes, remote compiler, visualization and progress persistence
 
-The project uses plain HTML, CSS, and JavaScript. `data.js` defines the curriculum, `app.js` handles DOM rendering, quizzes, filters, hash routing, and local progress. `style.css` defines the visual system and mobile breakpoints. No build step is required.
+**DO NOT place untrusted source text into `innerHTML`.** The UI builds elements and uses `textContent` for content and remote compiler results.
 
-## Manual smoke test
+## Content definitions
 
-1. Open the homepage at desktop and mobile widths.
-2. Filter lessons to C and then C++.
-3. Search for `arrays`, open the result, and copy its code.
-4. Mark a lesson completed, reload, and verify completion persists.
-5. Switch themes, reload, and verify theme persists.
-6. Answer a quiz question incorrectly; verify the correct answer and explanation appear.
-7. Complete the quiz, view the score, retry, and change quiz topic.
-8. Navigate using keyboard Tab and Enter; check visible focus indicators.
-9. Open a direct URL ending in `#lesson/c-hello` and verify the lesson renders.
+Each lesson needs a unique string `id`, `lang` (`c` or `cpp`), `title`, `level`, `description`, `intro`, compilable `code`, `points` (array of educational facts) and `challenge`. New lessons may also provide `walkthrough`, `pitfalls` and `output`.
 
-## Security notes
+Each quiz question needs unique `id`, `lang`, `question`, `options` (4 strings), zero-based `answer`, and `explanation`.
 
-Contributed text is inserted via `textContent`, not `innerHTML`. The site does not run learner code. Avoid introducing third-party scripts or collecting personal information without documenting the privacy impact.
+Each challenge needs unique `id`, `lang`, `title`, `level`, `topic`, `description`, `hint`, `samples` (at least two `{input, output}` pairs), and a compilable `solution`. The external service is not a full online judge: only the first sample is verified.
+
+Each project needs unique `id`, `lang`, `title`, `level`, `description`, `skills`, `steps`, `acceptance`, `starter`, and `tip`.
+
+## Test locally
+
+```bash
+python3 -m http.server 8000
+node --check assets/app.js
+node scripts/check-content.cjs
+```
+
+Review the site at common phone, tablet and desktop widths. Verify hashes (`#lesson/c-hello`, `#challenge/c-challenge-01`, `#project/c-calculator`), bookmarks, completion, quiz finish/retry, code highlighting, loading starter programs, and exporting/importing progress.
+
+## Compiler limitations
+
+Wandbox is queried only after a user clicks Run, uses GCC compilers from its advertised list and is subject to connectivity and third-party limits. Never embed a secret key in frontend source code. When service policies change, update the integration and this documentation; do not silently simulate execution.
+
+## Storage compatibility
+
+The new key `codelab-academy-complete-v2` stores arrays of stable IDs, theme, attempt count and editor drafts. It migrates known values from `codelab-academy-v1` and `codelab-practiced` on first load. Keep IDs stable when editing or progress could become orphaned.
+
+## Good first contributions
+
+Correct mistakes, add original practical tasks, improve compiler error messages, enhance keyboard navigation and add accessibility tests. No scraping or copying proprietary course content.
