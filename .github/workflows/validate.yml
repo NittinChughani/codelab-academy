@@ -1,0 +1,21 @@
+name: Validate CodeLab
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          node --check assets/data.js
+          node --check assets/challenges.js
+          node --check assets/projects.js
+          node --check assets/app.js
+      - name: Validate educational content
+        run: node scripts/check-content.cjs
