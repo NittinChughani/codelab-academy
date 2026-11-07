@@ -2582,8 +2582,8 @@ const CHALLENGES = [
     "hint": "Index zero is the first character.",
     "samples": [
       {
-        "input": "CodeLab",
-        "output": "C"
+        "input": "GearEx",
+        "output": "G"
       },
       {
         "input": "abc",
@@ -2604,8 +2604,8 @@ const CHALLENGES = [
     "hint": "Index zero is the first character.",
     "samples": [
       {
-        "input": "CodeLab",
-        "output": "C"
+        "input": "GearEx",
+        "output": "G"
       },
       {
         "input": "abc",
