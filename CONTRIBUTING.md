@@ -1,6 +1,6 @@
-# Contributing to CodeLab Academy
+# Contributing to GearEx
 
-Thanks for helping learners use C and C++ confidently. Contributions should be original, technically accurate and welcoming to beginners.
+Thanks for helping learners explore C, C++, Python, JavaScript, Java, C#, and SQL confidently. Contributions should be original, technically accurate and welcoming to beginners.
 
 ## Before you begin
 
@@ -19,7 +19,7 @@ Thanks for helping learners use C and C++ confidently. Contributions should be o
 
 ## Content requirements
 
-For lessons, explain the purpose of every important line, include a compilable example and a meaningful practice task. For quizzes, provide four distinct options and explain the correct answer. For challenges, provide at least two different sample inputs, a hint and a working, self-contained C or C++ solution. Include boundary cases where reasonable.
+For lessons, explain the purpose of every important line, include a runnable example and a meaningful practice task. For quizzes, provide four distinct options and explain the correct answer. For challenges, provide at least two different sample inputs, a hint and a working, self-contained C or C++ solution. Include boundary cases where reasonable.
 
 ## Test your change
 

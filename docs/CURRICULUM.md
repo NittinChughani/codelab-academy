@@ -1,6 +1,6 @@
-# CodeLab Academy — Curriculum
+# GearEx — Curriculum
 
-The course currently has **51 lessons** (25 in C and 26 in C++), **73 quiz questions**, **138 challenges** and **12 mini-projects**. You can filter lessons by language, bookmark an item and mark it complete.
+The course currently has **91 lessons** (25 C, 26 C++, and 8 each in Python, JavaScript, Java, C# and SQL), **113 quiz questions**, **138 C/C++ challenges** and **12 C/C++ mini-projects**. You can filter lessons by language, bookmark an item and mark it complete.
 
 ## C learning track (25 lessons)
 
@@ -72,3 +72,17 @@ C: Calculator → Gradebook → Contact Book → Inventory Manager → Notes Fil
 C++: Task List CLI → Bank Account Simulator → Digital Library → Terminal Quiz Engine → Expense Tracker → Text Adventure Engine.
 
 Suggested method: read a lesson, predict the example output, run it, solve a related challenge, and finally build a mini-project.
+
+## New GearEx learning tracks
+
+The five additional tracks have eight guided lessons each. Each lesson includes an introduction, core syntax, runnable example, key points, walkthrough and a practice task.
+
+- **Python:** Hello World, variables, conditions, loops, functions, lists, dictionaries, classes.
+- **JavaScript:** Hello World, let/const, conditions, loops, functions, arrays, objects, async/await.
+- **Java:** Hello World, data types, branches, loops, methods, arrays, objects, inheritance.
+- **C#:** Hello World, data types, branches, loops, methods, arrays, properties, LINQ.
+- **SQL:** SELECT, WHERE, ORDER BY, aggregates, GROUP BY, JOIN, CREATE/INSERT, UPDATE.
+
+### Assessment and awards
+
+Complete all lessons in a track and score at least 70% on its final assessment to unlock a printable, self-paced GearEx certificate. The certificates are generated in the browser and are not independently verified or accredited.
