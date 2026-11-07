@@ -400,16 +400,16 @@ LESSONS.push(...[
     "level": "Beginner",
     "description": "Manipulate text safely using the standard library.",
     "intro": "std::string manages dynamic text without manual null-termination.",
-    "code": "#include <iostream>\n#include <string>\nint main() {\n    std::string name = \"CodeLab\";\n    name += \" Academy\";\n    std::cout << name.size() << \" \" << name << \"\\n\";\n}",
+    "code": "#include <iostream>\n#include <string>\nint main() {\n    std::string name = \"GearEx\";\n    name += \" Platform\";\n    std::cout << name.size() << \" \" << name << \"\\n\";\n}",
     "points": [
       "std::string grows as needed.",
       "Use .size() to find character count.",
       "std::getline reads lines including spaces."
     ],
     "challenge": "Read a full name with getline and print its length.",
-    "walkthrough": "The text is 15 characters: 7 + 1 + 7.",
+    "walkthrough": "The text is 15 characters: 6 + 1 + 8.",
     "pitfalls": "std::cin >> reads only to the first whitespace.",
-    "output": "15 CodeLab Academy"
+    "output": "15 GearEx Platform"
   },
   {
     "id": "cpp-arrays",
