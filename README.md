@@ -4,7 +4,7 @@
   <p><strong>Learn. Code. Trace. Build.</strong></p>
   <p>An open-source learning studio for seven programming languages, built for curious developers.</p>
   <p>
-    <a href="https://nittinchughani.github.io/codelab-academy/"><img alt="Live website" src="https://img.shields.io/badge/Website-Live-0ABDC6?style=for-the-badge"></a>
+    <a href="https://nittinchughani.github.io/gearex/"><img alt="Live website" src="https://img.shields.io/badge/Website-Live-0ABDC6?style=for-the-badge"></a>
     <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-711C91?style=for-the-badge"></a>
     <img alt="Static site" src="https://img.shields.io/badge/Deployment-GitHub_Pages-133E7C?style=for-the-badge">
   </p>
@@ -16,7 +16,7 @@
 
 **GearEx** is a free, no-signup educational website that combines lessons, a runnable code playground, practice challenges, quizzes, guided tracing and self-paced completion certificates. It is a reimagining of the original CodeLab Academy project, with a new identity and expanded curriculum.
 
-**[Open GearEx](https://nittinchughani.github.io/codelab-academy/)** · **[Report a bug](../../issues/new?template=bug_report.md)** · **[Contribute](CONTRIBUTING.md)**
+**[Open GearEx](https://nittinchughani.github.io/gearex/)** · **[Report a bug](../../issues/new?template=bug_report.md)** · **[Contribute](CONTRIBUTING.md)**
 
 > **Repository URL note:** The repository currently retains the original `codelab-academy` slug so the working GitHub Pages URL stays active. The application name and site branding are GearEx. A repository rename requires a separate GitHub settings action; if renamed, update this URL and GitHub Pages configuration.
 
