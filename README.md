@@ -1,111 +1,112 @@
-# CodeLab Academy
+<div align="center">
+  <img src="assets/favicon.svg" alt="Original GearEx emblem" width="94" height="94" />
+  <h1>GearEx</h1>
+  <p><strong>Learn. Code. Trace. Build.</strong></p>
+  <p>An open-source learning studio for seven programming languages, built for curious developers.</p>
+  <p>
+    <a href="https://nittinchughani.github.io/codelab-academy/"><img alt="Live website" src="https://img.shields.io/badge/Website-Live-0ABDC6?style=for-the-badge"></a>
+    <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-711C91?style=for-the-badge"></a>
+    <img alt="Static site" src="https://img.shields.io/badge/Deployment-GitHub_Pages-133E7C?style=for-the-badge">
+  </p>
+</div>
 
-**Learn C and C++ — one concept and one program at a time.**
+---
 
-![CodeLab Academy homepage](docs/preview.png)
+## ⚡ What is GearEx?
 
-[**Visit the live website**](https://nittinchughani.github.io/codelab-academy/) · [Report a problem](https://github.com/NittinChughani/codelab-academy/issues) · [Contribute](CONTRIBUTING.md)
+**GearEx** is a free, no-signup educational website that combines lessons, a runnable code playground, practice challenges, quizzes, guided tracing and self-paced completion certificates. It is a reimagining of the original CodeLab Academy project, with a new identity and expanded curriculum.
 
-CodeLab Academy is a free, open-source, mobile-friendly learning site for C and C++. No accounts, build tools or database are necessary. Created with HTML, CSS and vanilla JavaScript.
+**[Open GearEx](https://nittinchughani.github.io/codelab-academy/)** · **[Report a bug](../../issues/new?template=bug_report.md)** · **[Contribute](CONTRIBUTING.md)**
 
-## What's included
+> **Repository URL note:** The repository currently retains the original `codelab-academy` slug so the working GitHub Pages URL stays active. The application name and site branding are GearEx. A repository rename requires a separate GitHub settings action; if renamed, update this URL and GitHub Pages configuration.
 
-| Area | Content |
-| --- | --- |
-| Courses | **51 lessons** in C and C++, with explanations, examples, tips and exercises |
-| Programming challenges | **138 exercises** (69 problem types, each implemented in C and C++), with sample input/output, hints and working reference code |
-| Quizzes | **73 questions** with detailed explanations, shuffled choices, topic filters, retries and best-score tracking |
-| Projects | **12 guided mini-projects** with milestones, acceptance criteria and starter templates |
-| Visual learning | Step-by-step loops, clickable array indices and a pointer/reference illustration |
-| Playground | Editable, syntax-highlighted C/C++ code, stdin, output, examples, reset, copy, and remote compilation |
-| Dashboard | Completed lessons, saved lessons, quizzes, tested challenges, projects, backup/export and restore/import |
-| Design | Dark/light themes, mobile layout, keyboard-friendly controls and clear feedback |
+## ✨ At a glance
 
-The course includes easier and more advanced tasks, but the material is designed for learning, not as a certified exam.
+| Learning experience | Included |
+|---|---|
+| Languages | **C, C++, Python, JavaScript, Java, C#, SQL** |
+| Guided lessons | **91** (51 original C/C++ + 40 new lessons) |
+| Quiz questions | **113** (73 original + 40 new questions) |
+| C/C++ coding challenges | **138**, including sample-input testing |
+| C/C++ guided mini-projects | **12** |
+| Code playground | Remote execution through **Wandbox** |
+| Trace & visualization | Guided line-by-line source annotations + interactive loops, arrays and pointers |
+| Completion certificates | One per language, unlocked with complete lessons and passing final assessment |
+| Privacy | Local progress storage; no required account |
 
-## Running the website locally
+### 🎨 Five custom themes
 
-Simplest option: open `index.html` in a modern browser. For the most consistent development behavior, serve the files locally:
+| Theme | Palette |
+|---|---|
+| **Cyberpunk Neon** | `#091833` · `#133E7C` · `#0ABDC6` · `#EA00D9` · `#711C91` |
+| **Quantum Teal** | `#041F2A` · `#00C2A8` · `#00E5FF` · `#B7C0CC` · `#F4F7FF` |
+| **Synthwave Sunset** | `#260B68` · `#C231C9` · `#FF4900` · `#FFD319` · `#FF6E40` |
+| **Bio-Digital Matrix** | `#0F172A` · `#0C1A2B` · `#D2FF26` · `#2DD4BF` · `#B2D5E9` |
+| **Hologram Haze** | `#1A1033` · `#B45CFF` · `#FF4FD8` · `#E0F7FA` · `#D9A5CD` |
 
-```bash
-python3 -m http.server 8000
-```
+Themes are selectable from the **top-right corner** and persist in this browser.
 
-Open `http://localhost:8000`.
+## 🧠 A complete learning loop
 
-No `npm install`, npm dependencies, configuration file, database, or API key is required to browse the course. **Running actual C/C++ programs in the playground does require internet access to Wandbox.**
+1. Pick a roadmap and read a lesson's introduction, syntax essentials, annotated example and practice challenge.
+2. Click **Try in playground** to run code or **Visualize step by step** for guided source annotations.
+3. Check understanding with quizzes and C/C++ practice challenges.
+4. Track your progress, export a backup, and return whenever you want.
+5. Complete all lessons in a language, pass its final assessment at **70% or higher**, and print a personal completion certificate.
 
-## How the C/C++ compiler works
+### About the tracer
 
-GitHub Pages is static hosting and cannot itself execute C/C++ programs. Clicking **Run code** sends the code and optional standard input to [Wandbox](https://wandbox.org/) (`/api/list.json` and `/api/compile.json`). Wandbox uses a separate remote sandbox to compile and execute programs and returns compiler diagnostics and output. Code is **not submitted just by opening the page**. No API key is embedded.
+The tracer currently provides **guided, source-order annotations** for snippets in all seven languages. It is **not an interpreter, instrumented runtime or full debugger**: it does not simulate control-flow decisions, loops, arbitrary functions, actual variable values or SQL query results. The separate visualizer includes interactive demonstrations of loops, arrays and pointers. For authoritative program output, use the remote runner. Future debugger support will require per-language runtime instrumentation or a secure backend.
 
-The UI selects an available GCC compiler from the current catalog, displays errors if compilation fails, and provides a manual fallback when the third-party service is unavailable. Remote execution is subject to Wandbox availability, browser CORS policies, third-party privacy terms and service limits. Do not send secrets or private data. We do **not** guarantee continuous public compilation availability. For frequent/production usage, deploy your own appropriately sandboxed compile service.
+### About the certificates
 
-Challenge checking compares **only the first supplied sample case**, using normalized whitespace and actual compiler stdout. A passing sample demonstrates only that case; it does **not** prove a solution is correct for all inputs. Hints and reference solutions are available for education.
+Certificates display the learner's name, the completed language, marks earned/total, percentage, overall performance, issue date and **Certified by creator · Nittin Chughani**. Completion is marked by the learner, and the assessment and certificate data live in local browser storage. These are **creator-issued self-paced learning achievements**, not institution-accredited, identity-verified credentials.
 
-For step-by-step **browser-only replacement** of an existing CodeLab Academy repository, see [UPLOAD_TO_GITHUB.md](UPLOAD_TO_GITHUB.md).
+## 🚀 Get started
 
-## GitHub Pages deployment
+This project is a static website. You don't need a build tool:
 
-1. Open your repository on GitHub.
-2. Use **Add file → Upload files** and upload the *contents* of this project folder, not the ZIP itself. Preserve `assets/`, `docs/`, `scripts/` and `.github/` folder paths.
-3. Review the listed destination paths before committing: `index.html` and `README.md` belong in the repository root, while `assets/app.js`, `assets/data.js`, `assets/challenges.js`, `assets/projects.js`, `assets/style.css` and `assets/favicon.svg` belong under `assets/`.
-4. Commit the changes. If your repository is already enabled for GitHub Pages, its existing configuration should continue to work.
-5. If Pages is not configured: **Settings → Pages → Deploy from a branch → main → / (root) → Save**.
-6. Refresh the published site after the deployment completes. Use a hard refresh if an older cached copy appears.
+1. Clone or download this repository.
+2. Open `index.html` in a modern browser, or serve the folder with a basic local HTTP server.
+3. Follow a roadmap, open the playground, choose your language and press **Run code**.
 
-**If GitHub's browser uploader skips a folder**, drag the folder into the upload area rather than choosing only the loose files. The `.github` folder contains optional automation and issue templates; the live website does not depend on it. GitHub may require you to create hidden-folder paths manually.
+Running code sends source and optional standard input to the free third-party **[Wandbox](https://wandbox.org/)** service. Execution needs internet access, depends on that service's available compilers and rate limits, and is **not** run within GitHub Pages. Avoid sending credentials or personal data in source.
 
-## Project structure
+## 🗂️ Project structure
 
 ```text
-codelab-academy/
-├── index.html
+GearEx/
+├── index.html                  # Main learning interface
 ├── assets/
-│   ├── app.js                # Browser UI, navigation, quiz, editor, progress
-│   ├── data.js               # 51 lessons, 73 quiz questions
-│   ├── challenges.js         # 138 original language-specific exercises
-│   ├── projects.js           # 12 guided mini projects
-│   ├── style.css             # Responsive styling and both themes
-│   └── favicon.svg
-├── docs/
-│   ├── CURRICULUM.md
-│   ├── DEVELOPMENT.md
-│   └── preview.png
-├── scripts/
-│   └── check-content.cjs
-├── .github/
-│   ├── workflows/validate.yml
-│   ├── ISSUE_TEMPLATE/
-│   └── PULL_REQUEST_TEMPLATE.md
-├── UPLOAD_TO_GITHUB.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-└── LICENSE
+│   ├── favicon.svg            # Original GearEx symbol
+│   ├── style.css              # Responsive design + 5 themes
+│   ├── data.js                # Original C/C++ lessons + quizzes
+│   ├── challenges.js          # C/C++ coding challenges
+│   ├── projects.js            # C/C++ guided projects
+│   ├── gearex-courses.js      # 5 new language courses
+│   ├── app.js                 # Core progress, quizzes, editor and compiler
+│   └── gearex-features.js     # Theme selector, tracer, certificates
+├── docs/                       # Curriculum and development notes
+├── scripts/check-content.cjs   # Content integrity test
+└── .github/workflows/          # GitHub Actions validation
 ```
 
-## Progress and privacy
+## 🔐 Progress & privacy
 
-The website stores progress in your browser's `localStorage` key `codelab-academy-complete-v2`. When you first upgrade from the original website, it attempts to import completed lessons, bookmarks, quiz best scores and practiced exercises from the earlier local storage keys. **Keep using the same website URL and browser profile** so this migration can work.
+GearEx stores bookmarks, lessons, quiz history, work-in-progress code, themes and certificate records in **localStorage** on your device. No account or cloud sync is required. Use **Export progress** to keep a backup; clearing browser data can erase local progress.
 
-Click **Dashboard → Export progress** to download a JSON backup. **Import progress** can restore it on another browser/device. The site has no account system, server-side tracking or analytics. Only using the remote compiler sends code/input to Wandbox.
+The pre-upgrade storage keys are intentionally retained to preserve progress for returning CodeLab Academy learners. Older progress exports can also be imported.
 
-## Tests
+## 🤝 Contribute
 
-```bash
-node --check assets/data.js
-node --check assets/challenges.js
-node --check assets/projects.js
-node --check assets/app.js
-node scripts/check-content.cjs
-```
+Bug reports, accessibility fixes, corrections to teaching explanations, multilingual course material and new visualizers are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started. Please only submit code and learning material you have permission to share.
 
-`check-content.cjs` verifies data format, unique IDs, sample cases and expected HTML elements. The GitHub Actions workflow runs it on pushes and pull requests. Before publishing UI changes, manually check the site in a desktop and mobile browser. See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+## 👨‍💻 Creator
 
-Challenge reference solutions were locally compiled with GCC / G++ and checked against their sample cases when this release was prepared. Remote Wandbox execution was tested with simulated API responses in a browser; actual public service availability can vary.
+**Created by Nittin Chughani** — a Computer Science & Engineering student and open-source builder creating helpful tools and accessible programming education.
 
-## Contributing
+**[GitHub profile](https://github.com/NittinChughani)**
 
-Corrections, better explanations, accessibility improvements, bug reports and new original tasks are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+---
 
-**License:** MIT — see [LICENSE](LICENSE). Unless otherwise stated, educational examples in this project are original content.
+<div align="center"><sub>Made for learning, experimenting and building useful things. · MIT License</sub></div>
