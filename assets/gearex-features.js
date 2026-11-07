@@ -73,10 +73,12 @@
     }
   }
   window.gearexRenderCertificates=renderCertificates;
+  window.gearexExportCertificates=()=>JSON.parse(JSON.stringify(results));
+  window.gearexImportCertificates=entries=>{if(!entries||typeof entries!=='object'||Array.isArray(entries))return;for(const lang of Object.keys(LANG)){const row=entries[lang];if(!row||!Number.isInteger(row.score)||!Number.isInteger(row.total)||row.total<1||row.total>100||row.score<0||row.score>row.total||typeof row.date!=='string')continue;results[lang]={score:row.score,total:row.total,date:row.date.slice(0,10),name:typeof row.name==='string'?row.name.slice(0,60):''};}saveResults();renderCertificates();};
   function startExam(lang){
     const c=course(lang);if(!c.lessons.length||c.done!==c.lessons.length){renderCertificates();return;}
     const bank=QUESTIONS.filter(q=>q.lang===lang);
-    const exam=bank.slice(0,Math.min(20,bank.length));
+    const total=Math.min(20,bank.length);const exam=Array.from({length:total},(_,i)=>bank[Math.floor(i*bank.length/total)]);
     if(!exam.length)return;
     const box=qs('#certificateExam');box.hidden=false;box.replaceChildren();
     box.append(element('span','eyebrow',LANG[lang]+' · FINAL COURSE ASSESSMENT'),element('h3','',exam.length+' questions · '+exam.length+' total marks'));
@@ -90,11 +92,11 @@
     const submit=element('button','button primary','Submit assessment');submit.type='submit';form.append(submit);
     form.addEventListener('submit',e=>{
       e.preventDefault();if(!form.reportValidity())return;
-      const answers=exam.map((q,i)=>Number(new FormData(form).get('cert-question-'+i)));
+      const submitted=new FormData(form);const answers=exam.map((q,i)=>Number(submitted.get('cert-question-'+i)));
       const score=exam.reduce((sum,q,i)=>sum+(answers[i]===q.answer?1:0),0),p=percent(score,exam.length);
       box.replaceChildren(element('h3','',p>=70?'Assessment passed!':'Assessment completed'),element('p','',score+' / '+exam.length+' marks · '+p+'% · '+performance(score,exam.length)));
       if(p>=70){
-        if(!results[lang]||score/results[lang]?.total>results[lang]?.score/results[lang]?.total||score>results[lang].score){
+        if(!results[lang]||percent(score,exam.length)>percent(results[lang].score,results[lang].total)){
           results[lang]={score,total:exam.length,date:new Date().toISOString().slice(0,10)};
           saveResults();
         }
