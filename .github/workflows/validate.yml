@@ -1,4 +1,4 @@
-name: Validate CodeLab
+name: Validate GearEx
 on:
   push:
   pull_request:
@@ -14,8 +14,10 @@ jobs:
       - name: JavaScript syntax
         run: |
           node --check assets/data.js
+          node --check assets/gearex-courses.js
           node --check assets/challenges.js
           node --check assets/projects.js
           node --check assets/app.js
+          node --check assets/gearex-features.js
       - name: Validate educational content
         run: node scripts/check-content.cjs
